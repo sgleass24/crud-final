@@ -1,0 +1,34 @@
+body {
+    padding: 50px;
+    font-family: 'Teko', sans-serif;
+    background-color: darkslategrey;
+    background-image: url('../images/logo.png');
+    background-position: cover;
+    background-repeat: repeat;
+    background-size: 200px;
+  }
+
+  .card{
+      margin:120px;
+  }
+  
+  .edit{
+      background-color: darkolivegreen;
+  }
+
+  .delete{
+      background-color: maroon;
+  }
+
+  .add{
+      background-color: darkslateblue;
+      color:whitesmoke;
+  }
+
+  td{
+      color:black;
+  }
+
+  a {
+    color: whitesmoke;
+  }

@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font-family: 'Teko', sans-serif;
+  background-color: lightslategray;
+  background-image: url('../images/avengers2.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 600px;
+
+}
+
+a {
+  color: whitesmoke;
+}
+
+h1{
+  color:whitesmoke;
+  font-weight: bold;
+  font-size: 60px;
+
+}
+p{
+  
+  color:whitesmoke;
+  font-weight: bold;
+  font-size: 40px
+}
+

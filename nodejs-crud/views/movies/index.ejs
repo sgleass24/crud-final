@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Movies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/movies.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Teko:wght@500&display=swap" rel="stylesheet">
+</head>
+<body class="container">
+
+    <% if (messages.success) { %>
+    <div class="alert alert-success" role="alert"><%- messages.success %></div>
+    <% } %>
+
+    <% if (messages.error) { %>
+    <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+    <% } %>
+
+
+    <a href="/" id="homeButton">Go Home</a> <br>
+    <a href ="/movies" id="buttonOther">See Movie List</a>
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">Movies</a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link add" href="/movies/add">Add Movie</a>
+                </li>
+            </ul>
+        </div>
+    <div class="card-body">
+
+        <% if(data.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Director</th>
+                    <th width="200px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i< data.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= (i+1) %></th>
+                    <td><%= data[i].title%></td>
+                    <td><%= data[i].director%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="../movies/edit/<%=data[i].id%>">Edit</a>
+                        <a class="btn btn-danger delete" onclick="alert('Are You sure?')" href="../movies/delete/<%=data[i].id%>">Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% } %>
+
+        <!-- if result is empty -->
+        <% if(!data.length) { %>
+            <p class="text-center">No movie found!</p>
+        <% } %>
+
+        </div>
+    </div>
+
+</body>
+</html>
